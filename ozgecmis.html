@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Projesi</title>
+    <title>Özgeçmiş - Yiğit Şenel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="css/style.css">
+    <style>
+        .cv-sidebar {
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .skill-badge {
+            margin-bottom: 5px;
+        }
+    </style>
 </head>
+
 <body>
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="index.html">WebProjem</a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="index.html">Hakkında</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Hakkında</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="ozgecmis.html">Özgeçmiş</a></li>
                     <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-                    <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2"
                             href="login.html">Login</a></li>
@@ -29,5 +37,88 @@
             </div>
         </div>
     </nav>
+
+    <main class="container my-5">
+        <div class="card shadow border-0">
+            <div class="row g-0">
+                <div class="col-md-4 cv-sidebar p-4 text-center">
+                    <img src="img/profil.jpg" class="img-fluid rounded-circle mb-3 shadow" alt="Profil Fotoğrafı"
+                        style="width: 200px; height: 200px; object-fit: cover;">
+                    <h2 class="h4 fw-bold">Yiğit Şenel</h2>
+                    <p class="text-muted">Bilgisayar Mühendisliği Öğrencisi</p>
+                    <hr>
+                    <div class="text-start">
+                        <h5 class="fw-bold"><i class="fas fa-user me-2"></i>Kişisel Bilgiler</h5>
+                        <p><i class="fas fa-envelope me-2 text-primary"></i> ilhanyigit98@gmail.com</p>
+                        <p><i class="fas fa-location-dot me-2 text-primary"></i> Balıkesir, Türkiye</p>
+                    </div>
+                    <hr>
+                    <div class="text-start">
+                        <h5 class="fw-bold"><i class="fas fa-code me-2"></i>Yetenekler</h5>
+                        <span class="badge bg-dark skill-badge">HTML5 / CSS3</span>
+                        <span class="badge bg-dark skill-badge">PHP</span>
+                        <span class="badge bg-dark skill-badge">8051 Assembly</span>
+                        <span class="badge bg-dark skill-badge">Bootstrap 5</span>
+                        <span class="badge bg-dark skill-badge">C++</span>
+                        <span class="badge bg-dark skill-badge">Java</span>
+
+                    </div>
+                </div>
+
+                <div class="col-md-8 p-4">
+                    <section class="mb-4">
+                        <h3 class="border-bottom pb-2 fw-bold text-primary"><i
+                                class="fas fa-graduation-cap me-2"></i>Eğitim Bilgileri</h3>
+
+                        <div class="mt-3">
+                            <h5>Sakarya Üniversitesi</h5>
+                            <p class="text-muted mb-1">Bilgisayar Mühendisliği | 2025 - Devam Ediyor</p>
+                        </div>
+                        <div class="mt-4">
+                            <h5>Bahçeşehir Üniversitesi</h5>
+                            <p class="text-muted mb-1">Bilgisayar Mühendisliği | 2024 - 2025</p>
+                        </div>
+
+                        <div class="mt-4">
+                            <h5>Prof. Dr. Nabi Avcı Anadolu Lisesi</h5>
+                            <p class="text-muted mb-1">Sayısal Bölüm | 2019 - 2023 Mezunu</p>
+                        </div>
+                    </section>
+                </div>
+
+                <section class="mb-4">
+                    <h3 class="border-bottom pb-2 fw-bold text-primary"><i class="fas fa-briefcase me-2"></i>Projeler ve
+                        Deneyim</h3>
+                    <div class="mt-3">
+                        <h5 class="mb-1">Web Teknolojileri Projesi</h5>
+                        <small class="text-muted">Nisan 2026</small>
+                        <p>Bootstrap 5 ve PHP kullanılarak geliştirilmiş, dinamik iletişim formuna sahip kişisel web
+                            portfolyosu.</p>
+                    </div>
+                    <div class="mt-3">
+                        <h5 class="mb-1">8051 Mikrodenetleyici Yazılımı</h5>
+                        <small class="text-muted">Mart 2026</small>
+                        <p>Assembly dili kullanılarak register bankları arası veri transferi ve sıcaklık sensörü veri
+                            işleme yazılımı.</p>
+                    </div>
+                </section>
+
+                <section>
+                    <h3 class="border-bottom pb-2 fw-bold text-primary"><i class="fas fa-heart me-2"></i>İlgi Alanları
+                    </h3>
+                    <p>Düzenli olarak fitness ve spor aktiviteleriyle ilgileniyorum. Yenilenebilir enerji sistemleri,
+                        özellikle hidroelektrik santrallerin çalışma prensipleri üzerine araştırmalar yapıyorum.</p>
+                </section>
+            </div>
+        </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3 mt-5">
+        <p>&copy; 2026 Yiğit Şenel - Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
