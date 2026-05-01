@@ -57,6 +57,73 @@
                         piyano çaldım
                         ve şu anda aktif olarak gitar çalmaktayım. </li>
                 </ul>
+
+
+
+                <div class="mt-5 p-4 border rounded shadow-sm bg-light">
+                    <h4 class="mb-3 text-primary">🎬 İlgi Alanlarım: Film Keşfet</h4>
+                    <p class="small text-muted">Ödev kuralı gereği OMDB API kullanılarak gerçek zamanlı veri
+                        çekilmektedir.</p>
+
+                    <div class="input-group mb-3">
+                        <input type="text" id="movieSearch" class="form-control"
+                            placeholder="İngilizce film adı girin (Örn: Batman)...">
+                        <button class="btn btn-primary" onclick="searchMovie()">Veri Çek</button>
+                    </div>
+
+                    <div id="movieResult" class="row">
+                    </div>
+                </div>
+
+                <script>
+                    async function searchMovie() {
+                        const movieName = document.getElementById('movieSearch').value;
+                        const resultArea = document.getElementById('movieResult');
+
+                        if (!movieName) return;
+
+                        // Spinner'ı başlat
+                        resultArea.innerHTML = '<div class="text-center py-3"><div class="spinner-border text-primary" role="status"></div></div>';
+
+                        // API Key ve URL (Başına https ekledik)
+                        const apiKey = "f67f63ea";
+                        const url = `https://www.omdbapi.com/?t=${encodeURIComponent(movieName)}&apikey=${apiKey}`;
+
+                        try {
+                            const response = await fetch(url);
+                            const data = await response.json();
+
+                            console.log("Gelen Veri:", data);
+
+                            if (data.Response === "True") {
+                                resultArea.innerHTML = `
+                <div class="col-12 mt-3">
+                    <div class="card border-0 bg-transparent">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-sm-4 text-center">
+                                <img src="${data.Poster}" class="img-fluid rounded shadow-sm" style="max-height: 200px;" alt="${data.Title}">
+                            </div>
+                            <div class="col-sm-8 p-3 text-start">
+                                <h5 class="fw-bold">${data.Title} (${data.Year})</h5>
+                                <p class="mb-1 small text-dark"><strong>IMDb:</strong> ⭐ ${data.imdbRating}</p>
+                                <p class="mb-1 small text-dark"><strong>Yönetmen:</strong> ${data.Director}</p>
+                                <p class="small text-secondary mb-0">${data.Plot}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+                            } else {
+                                // API'den gelen hata mesajını göster (Error: Movie not found gibi)
+                                resultArea.innerHTML = `<div class="alert alert-warning mt-3">${data.Error}</div>`;
+                            }
+                        } catch (error) {
+                            console.error("Bağlantı Hatası:", error);
+                            resultArea.innerHTML = `<div class="alert alert-danger mt-3">Sunucu bağlantı hatası! İnternetinizi kontrol edin.</div>`;
+                        }
+                    }
+                </script>
+
+
                 <div class="mt-4 pt-3 border-top">
                     <h5 class="mb-3">Bana Ulaşın:</h5>
                     <a href="https://github.com/IYigitSenel" target="_blank" class="btn btn-outline-dark btn-sm me-2">
