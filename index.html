@@ -1,153 +1,138 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Projesi</title>
+    <title>Hakkında - İlhan Yiğit Şenel</title>
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome (İkonlar için) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Senin Özel CSS Dosyan -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-
-
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">WebProjem</a>
 
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html text-uppercase">WebProjem</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="index.html">Hakkında</a></li>
                     <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
                     <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
                     <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2"
-                            href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2 px-3 shadow-sm" href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <main class="container mt-5">
-        <div class="row align-items-center">
+    <main class="container mt-5 pb-5">
+        <div class="row align-items-start g-5">
             <div class="col-md-8">
-                <h1 class="border-bottom pb-3">Hakkında</h1>
-                <p class="mt-4 lead">
-                    Merhaba! Ben İlhan Yiğit Şenel. Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisiyim.
-                    Teknolojiye olan merakım ve yazılım geliştirme tutkumla bu projeyi hazırladım.
-                </p>
+                <div class="bio-section p-4 bg-white rounded shadow-sm border-start border-primary border-4">
+                    <h1 class="display-5 fw-bold mb-3">Hakkında</h1>
+                    <p class="lead text-secondary">
+                        Merhaba! Ben <strong>İlhan Yiğit Şenel</strong>. Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisiyim. 
+                        Teknolojiye olan merakım ve yazılım geliştirme tutkumla bu projeyi hazırladım.
+                    </p>
+                </div>
 
-                <h3 class="mt-5">Hobilerim ve Etkinlikler</h3>
-                <ul>
-                    <li class="mb-3"><strong>Spor:</strong> Yaklaşık 3-4 aydır vücut geliştirme ile ilgileniyorum. Küçük
-                        yaşlardan
-                        beri basketbol ile ilgiliyim ve yakından takip ediyorum. Ayrıca amatör seviyede de kulüplerde
-                        oynadım.</li>
-                    <li class="mb-3"><strong>Yazılım:</strong> Bilgisayar mühendisi adayı olarak, teknolojiyi sadece bir
-                        araç değil,
-                        problem çözme sanatı olarak görüyorum. Düşük seviyeli dillerle donanım mimarisine dokunmaktan,
-                        modern web
-                        teknolojileriyle kullanıcı dostu arayüzler inşa etmeye kadar geniş bir yelpazede kendimi
-                        geliştiriyorum.</li>
-                    <li class="mb-3"><strong>Müzik:</strong> Küçük yaşlardan beri müzik ile ilgiliyim. Yaklaşık 3-4 sene
-                        piyano çaldım
-                        ve şu anda aktif olarak gitar çalmaktayım. </li>
-                </ul>
-
-
-
-                <div class="mt-5 p-4 border rounded shadow-sm bg-light">
-                    <h4 class="mb-3 text-primary">🎬 İlgi Alanlarım: Film Keşfet</h4>
-                    <p class="small text-muted">Ödev kuralı gereği OMDB API kullanılarak gerçek zamanlı veri
-                        çekilmektedir.</p>
-
-                    <div class="input-group mb-3">
-                        <input type="text" id="movieSearch" class="form-control"
-                            placeholder="İngilizce film adı girin (Örn: Batman)...">
-                        <button class="btn btn-primary" onclick="searchMovie()">Veri Çek</button>
+                <h3 class="mt-5 mb-4 fw-bold"><i class="fas fa-star text-warning me-2"></i>Hobilerim ve Etkinlikler</h3>
+                <div class="hobbies-list">
+                    <div class="hobby-item mb-4 p-3 rounded">
+                        <h5><i class="fas fa-dumbbell me-2 text-primary"></i>Spor</h5>
+                        <p class="mb-0">Yaklaşık 3-4 aydır vücut geliştirme ile ilgileniyorum. Basketbolu hem izleyici hem de eski bir kulüp oyuncusu olarak yakından takip ediyorum.</p>
                     </div>
-
-                    <div id="movieResult" class="row">
+                    <div class="hobby-item mb-4 p-3 rounded">
+                        <h5><i class="fas fa-code me-2 text-success"></i>Yazılım</h5>
+                        <p class="mb-0">Donanım mimarisinden modern web teknolojilerine kadar geniş bir yelpazede problem çözme sanatı üzerine kendimi geliştiriyorum.</p>
+                    </div>
+                    <div class="hobby-item mb-4 p-3 rounded">
+                        <h5><i class="fas fa-music me-2 text-danger"></i>Müzik</h5>
+                        <p class="mb-0">Piyano geçmişimin üzerine şu anda aktif olarak gitar çalmaktayım.</p>
                     </div>
                 </div>
 
-                <script>
-                    async function searchMovie() {
-                        const movieName = document.getElementById('movieSearch').value;
-                        const resultArea = document.getElementById('movieResult');
+                <!-- API Entegrasyonu Bölümü -->
+                <div class="api-section mt-5 p-4 rounded shadow">
+                    <h4 class="mb-3 fw-bold text-dark"><i class="fas fa-film me-2 text-primary"></i>İlgi Alanlarım: Film Keşfet</h4>
+                    <p class="small text-muted mb-4">OMDB API üzerinden gerçek zamanlı veri çekilmektedir.</p>
 
-                        if (!movieName) return;
-
-                        // Spinner'ı başlat
-                        resultArea.innerHTML = '<div class="text-center py-3"><div class="spinner-border text-primary" role="status"></div></div>';
-
-                        // API Key ve URL (Başına https ekledik)
-                        const apiKey = "f67f63ea";
-                        const url = `https://www.omdbapi.com/?t=${encodeURIComponent(movieName)}&apikey=${apiKey}`;
-
-                        try {
-                            const response = await fetch(url);
-                            const data = await response.json();
-
-                            console.log("Gelen Veri:", data);
-
-                            if (data.Response === "True") {
-                                resultArea.innerHTML = `
-                <div class="col-12 mt-3">
-                    <div class="card border-0 bg-transparent">
-                        <div class="row g-0 align-items-center">
-                            <div class="col-sm-4 text-center">
-                                <img src="${data.Poster}" class="img-fluid rounded shadow-sm" style="max-height: 200px;" alt="${data.Title}">
-                            </div>
-                            <div class="col-sm-8 p-3 text-start">
-                                <h5 class="fw-bold">${data.Title} (${data.Year})</h5>
-                                <p class="mb-1 small text-dark"><strong>IMDb:</strong> ⭐ ${data.imdbRating}</p>
-                                <p class="mb-1 small text-dark"><strong>Yönetmen:</strong> ${data.Director}</p>
-                                <p class="small text-secondary mb-0">${data.Plot}</p>
-                            </div>
-                        </div>
+                    <div class="input-group mb-3 shadow-sm">
+                        <input type="text" id="movieSearch" class="form-control border-0 px-3" placeholder="İngilizce film adı (Örn: Inception)...">
+                        <button class="btn btn-primary px-4 fw-bold" onclick="searchMovie()">Veri Çek</button>
                     </div>
-                </div>`;
-                            } else {
-                                // API'den gelen hata mesajını göster (Error: Movie not found gibi)
-                                resultArea.innerHTML = `<div class="alert alert-warning mt-3">${data.Error}</div>`;
-                            }
-                        } catch (error) {
-                            console.error("Bağlantı Hatası:", error);
-                            resultArea.innerHTML = `<div class="alert alert-danger mt-3">Sunucu bağlantı hatası! İnternetinizi kontrol edin.</div>`;
-                        }
-                    }
-                </script>
 
+                    <div id="movieResult" class="row"></div>
+                </div>
 
-                <div class="mt-4 pt-3 border-top">
-                    <h5 class="mb-3">Bana Ulaşın:</h5>
-                    <a href="https://github.com/IYigitSenel" target="_blank" class="btn btn-outline-dark btn-sm me-2">
-                        GitHub
+                <div class="social-links mt-5 pt-3 border-top d-flex align-items-center">
+                    <span class="me-3 fw-bold">Bana Ulaşın:</span>
+                    <a href="https://github.com/IYigitSenel" target="_blank" class="btn btn-dark btn-sm me-2 shadow-sm">
+                        <i class="fab fa-github me-1"></i> GitHub
                     </a>
-                    <a href="https://www.instagram.com/yiigith" target="_blank"
-                        class="btn btn-outline-primary btn-sm me-2">
-                        Instagram
+                    <a href="https://www.instagram.com/yiigith" target="_blank" class="btn btn-danger btn-sm shadow-sm">
+                        <i class="fab fa-instagram me-1"></i> Instagram
                     </a>
                 </div>
             </div>
 
-            <div class="col-md-4 text-center">
-                <div class="p-2 border rounded shadow-sm bg-white d-inline-block">
-                    <img src="img/profil.jpg" alt="Profil Resmi" class="img-fluid rounded" style="max-width: 120px;">
-                    <p class="text-muted small mb-0 mt-2">İlhan Yiğit Şenel</p>
+            <!-- Sağ Profil Kartı -->
+            <div class="col-md-4 text-center sticky-md-top" style="top: 100px;">
+                <div class="profile-card p-4 border-0 rounded-4 shadow bg-white">
+                    <div class="profile-img-container mb-3">
+                        <img src="img/profil.jpg" alt="Profil Resmi" class="img-fluid rounded-circle shadow border border-4 border-white">
+                    </div>
+                    <h4 class="fw-bold mb-1">İlhan Yiğit Şenel</h4>
+                    <p class="text-primary small fw-bold">Bilgisayar Mühendisi Adayı</p>
+                    <p class="text-muted x-small">Sakarya Üniversitesi</p>
                 </div>
             </div>
         </div>
     </main>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JavaScript Fonksiyonun (TVMaze API versiyonu en sağlıklısıydı) -->
+    <script>
+        async function searchMovie() {
+            const movieName = document.getElementById('movieSearch').value;
+            const resultArea = document.getElementById('movieResult');
+            if (!movieName) return;
+            resultArea.innerHTML = '<div class="text-center py-3"><div class="spinner-border text-primary" role="status"></div></div>';
+            
+            const url = `https://api.tvmaze.com/singlesearch/shows?q=${encodeURIComponent(movieName)}`;
 
+            try {
+                const response = await fetch(url);
+                if(response.ok) {
+                    const data = await response.json();
+                    resultArea.innerHTML = `
+                        <div class="col-12 mt-3 animate-fade-in">
+                            <div class="card border-0 bg-light p-3">
+                                <div class="row g-0 align-items-center">
+                                    <div class="col-sm-4 text-center">
+                                        <img src="${data.image ? data.image.medium : 'https://via.placeholder.com/210x295'}" class="img-fluid rounded shadow-sm" style="max-height: 180px;">
+                                    </div>
+                                    <div class="col-sm-8 p-3">
+                                        <h5 class="fw-bold">${data.name}</h5>
+                                        <p class="mb-1 badge bg-primary">Puan: ${data.rating.average || 'N/A'}</p>
+                                        <div class="small text-muted">${data.summary ? data.summary.substring(0, 150) : ''}...</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>`;
+                } else {
+                    resultArea.innerHTML = `<div class="alert alert-warning mt-3">Sonuç bulunamadı!</div>`;
+                }
+            } catch (error) {
+                resultArea.innerHTML = `<div class="alert alert-danger mt-3">API Hatası!</div>`;
+            }
+        }
+    </script>
 </body>
-
 </html>
