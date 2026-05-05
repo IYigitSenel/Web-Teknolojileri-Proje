@@ -83,7 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </html>";
 
 } else {
-    // Form dışı erişimlerde iletişim sayfasına geri gönder
+    // Form dışı erişimlerde  geri gönder
     header("Location: ../iletisim.html");
     exit();
 }

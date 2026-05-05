@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </body>
         </html>";
     } 
-    // Bilgiler hatalıysa veya boşsa
+    // Bilgiler hatalıysa veya boşsa geri gönder
     else {
         echo "<script>
             alert('Hata: Kullanıcı adı veya şifre hatalı!');
