@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +12,7 @@
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body class="contact-page">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
@@ -22,7 +24,8 @@
                     <li class="nav-item"><a class="nav-link" href="ozgecmis.html">Özgeçmiş</a></li>
                     <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
                     <li class="nav-item"><a class="nav-link active" href="iletisim.html">İletişim</a></li>
-                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2 px-3 shadow-sm" href="login.html">Login</a></li>
+                    <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-lg-2 px-3 shadow-sm"
+                            href="login.html">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -42,19 +45,23 @@
                             <div class="row">
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold">Adınız Soyadınız</label>
-                                    <input type="text" name="name" v-model="formData.name" id="name" class="form-control custom-input" placeholder="Ad Soyad">
+                                    <input type="text" name="name" v-model="formData.name" id="name"
+                                        class="form-control custom-input" placeholder="Ad Soyad">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold">E-posta Adresiniz</label>
-                                    <input type="email" name="email" v-model="formData.email" id="email" class="form-control custom-input" placeholder="ornek@mail.com">
+                                    <input type="email" name="email" v-model="formData.email" id="email"
+                                        class="form-control custom-input" placeholder="ornek@mail.com">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold">Telefon Numaranız</label>
-                                    <input type="text" name="phone" v-model="formData.phone" id="phone" class="form-control custom-input" placeholder="05XXXXXXXXX">
+                                    <input type="text" name="phone" v-model="formData.phone" id="phone"
+                                        class="form-control custom-input" placeholder="05XXXXXXXXX">
                                 </div>
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold">Konu</label>
-                                    <select name="subject" v-model="formData.subject" id="subject" class="form-select custom-input">
+                                    <select name="subject" v-model="formData.subject" id="subject"
+                                        class="form-select custom-input">
                                         <option value="" disabled>Seçiniz...</option>
                                         <option value="Öneri">Öneri</option>
                                         <option value="Şikayet">Şikayet</option>
@@ -64,39 +71,54 @@
                                 <div class="col-md-6 mb-3">
                                     <label class="form-label fw-bold d-block">Cinsiyet</label>
                                     <div class="form-check form-check-inline mt-2">
-                                        <input class="form-check-input" type="radio" name="gender" v-model="formData.gender" value="Erkek">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            v-model="formData.gender" value="Erkek">
                                         <label class="form-check-label">Erkek</label>
                                     </div>
                                     <div class="form-check form-check-inline mt-2">
-                                        <input class="form-check-input" type="radio" name="gender" v-model="formData.gender" value="Kadın">
+                                        <input class="form-check-input" type="radio" name="gender"
+                                            v-model="formData.gender" value="Kadın">
                                         <label class="form-check-label">Kadın</label>
                                     </div>
                                 </div>
+
                                 <div class="col-12 mb-3">
                                     <label class="form-label fw-bold">Mesajınız</label>
-                                    <textarea name="message" v-model="formData.message" id="message" class="form-control custom-input" rows="4"></textarea>
+                                    <textarea name="message" v-model="formData.message" id="message"
+                                        class="form-control custom-input" rows="4"></textarea>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="kvkkOnay" required>
+                                    <label class="form-check-label" for="kvkkOnay">
+                                        Okudum, anladım ve kişisel verilerimin işlenmesini kabul ediyorum.
+                                    </label>
                                 </div>
                             </div>
 
                             <!-- İki Farklı Denetim Butonu  -->
                             <div class="row g-2 mt-4">
                                 <div class="col-md-6">
-                                    <button type="button" class="btn btn-secondary w-100 fw-bold" onclick="validateWithJS()">
+                                    <button type="button" class="btn btn-secondary w-100 fw-bold"
+                                        onclick="validateWithJS()">
                                         <i class="fas fa-code me-2"></i>Standart JS ile Denetle
                                     </button>
                                 </div>
                                 <div class="col-md-6">
-                                    <button type="button" class="btn btn-success w-100 fw-bold" @click="validateWithVue">
+                                    <button type="button" class="btn btn-success w-100 fw-bold"
+                                        @click="validateWithVue">
                                         <i class="fab fa-vuejs me-2"></i>Vue.js ile Denetle
                                     </button>
                                 </div>
                                 <div class="col-12 mt-3">
-                                    <button type="submit" id="submitBtn" class="btn btn-primary w-100 btn-lg shadow-sm fw-bold" disabled>
+                                    <button type="submit" id="submitBtn"
+                                        class="btn btn-primary w-100 btn-lg shadow-sm fw-bold" disabled>
                                         Gönder (Denetim Gerekli)
                                     </button>
                                 </div>
                                 <div class="col-12 text-center">
-                                    <button type="reset" class="btn btn-link text-decoration-none text-muted btn-sm mt-2">Formu Temizle</button>
+                                    <button type="reset"
+                                        class="btn btn-link text-decoration-none text-muted btn-sm mt-2">Formu
+                                        Temizle</button>
                                 </div>
                             </div>
                         </form>
@@ -107,58 +129,59 @@
     </main>
 
     <script>
-    // --- 1. YÖNTEM: STANDART JAVASCRIPT DENETİMİ ---
-    function validateWithJS() {
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const phone = document.getElementById('phone').value.trim();
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        const phoneRegex = /^[0-9]+$/;
+        // --- 1. YÖNTEM: STANDART JAVASCRIPT DENETİMİ ---
+        function validateWithJS() {
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[0-9]+$/;
 
-        if (!name || !email || !phone) {
-            alert("JS Hatası: Ad, E-posta ve Telefon alanları boş bırakılamaz!");
-        } else if (!emailRegex.test(email)) {
-            alert("JS Hatası: Geçersiz e-posta formatı!");
-        } else if (!phoneRegex.test(phone)) {
-            alert("JS Hatası: Telefon sadece rakamlardan oluşmalıdır!");
-        } else {
-            alert("JS Denetimi Başarılı! Gönder butonu aktif edildi.");
-            document.getElementById('submitBtn').disabled = false;
-        }
-    }
-
-    // --- 2. YÖNTEM: VUE.JS FRAMEWORK DENETİMİ ---
-    const { createApp } = Vue;
-    createApp({
-        data() {
-            return {
-                formData: {
-                    name: '',
-                    email: '',
-                    phone: '',
-                    subject: '',
-                    gender: '',
-                    message: ''
-                }
-            }
-        },
-        methods: {
-            validateWithVue() {
-                if (!this.formData.name || !this.formData.email || !this.formData.phone) {
-                    alert("Vue Hatası: Zorunlu alanları doldurun!");
-                } else if (!this.formData.email.includes('@')) {
-                    alert("Vue Hatası: Geçersiz E-posta!");
-                } else if (isNaN(this.formData.phone) || this.formData.phone.length < 10) {
-                    alert("Vue Hatası: Telefon numarası sayısal ve geçerli olmalıdır!");
-                } else {
-                    alert("Vue.js Denetimi Başarılı! Form hazır.");
-                    document.getElementById('submitBtn').disabled = false;
-                }
+            if (!name || !email || !phone) {
+                alert("JS Hatası: Ad, E-posta ve Telefon alanları boş bırakılamaz!");
+            } else if (!emailRegex.test(email)) {
+                alert("JS Hatası: Geçersiz e-posta formatı!");
+            } else if (!phoneRegex.test(phone)) {
+                alert("JS Hatası: Telefon sadece rakamlardan oluşmalıdır!");
+            } else {
+                alert("JS Denetimi Başarılı! Gönder butonu aktif edildi.");
+                document.getElementById('submitBtn').disabled = false;
             }
         }
-    }).mount('#app');
+
+        // --- 2. YÖNTEM: VUE.JS FRAMEWORK DENETİMİ ---
+        const { createApp } = Vue;
+        createApp({
+            data() {
+                return {
+                    formData: {
+                        name: '',
+                        email: '',
+                        phone: '',
+                        subject: '',
+                        gender: '',
+                        message: ''
+                    }
+                }
+            },
+            methods: {
+                validateWithVue() {
+                    if (!this.formData.name || !this.formData.email || !this.formData.phone) {
+                        alert("Vue Hatası: Zorunlu alanları doldurun!");
+                    } else if (!this.formData.email.includes('@')) {
+                        alert("Vue Hatası: Geçersiz E-posta!");
+                    } else if (isNaN(this.formData.phone) || this.formData.phone.length < 10) {
+                        alert("Vue Hatası: Telefon numarası sayısal ve geçerli olmalıdır!");
+                    } else {
+                        alert("Vue.js Denetimi Başarılı! Form hazır.");
+                        document.getElementById('submitBtn').disabled = false;
+                    }
+                }
+            }
+        }).mount('#app');
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
