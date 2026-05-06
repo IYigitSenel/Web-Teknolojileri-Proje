@@ -128,21 +128,33 @@
         </div>
     </main>
 
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="kvkkOnay" v-model="formData.kvkk">
+        <label class="form-check-label" for="kvkkOnay">
+            Okudum, anladım ve kişisel verilerimin işlenmesini kabul ediyorum.
+        </label>
+    </div>
+
     <script>
         // --- 1. YÖNTEM: STANDART JAVASCRIPT DENETİMİ ---
         function validateWithJS() {
             const name = document.getElementById('name').value.trim();
             const email = document.getElementById('email').value.trim();
             const phone = document.getElementById('phone').value.trim();
+            const kvkk = document.getElementById('kvkkOnay').checked; // Checkbox durumu
+
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
             const phoneRegex = /^[0-9]+$/;
 
+            // Tüm şartları tek bir if içinde kontrol ediyoruz
             if (!name || !email || !phone) {
                 alert("JS Hatası: Ad, E-posta ve Telefon alanları boş bırakılamaz!");
             } else if (!emailRegex.test(email)) {
                 alert("JS Hatası: Geçersiz e-posta formatı!");
             } else if (!phoneRegex.test(phone)) {
                 alert("JS Hatası: Telefon sadece rakamlardan oluşmalıdır!");
+            } else if (!kvkk) {
+                alert("JS Hatası: Lütfen KVKK onay kutusunu işaretleyiniz.");
             } else {
                 alert("JS Denetimi Başarılı! Gönder butonu aktif edildi.");
                 document.getElementById('submitBtn').disabled = false;
@@ -160,7 +172,8 @@
                         phone: '',
                         subject: '',
                         gender: '',
-                        message: ''
+                        message: '',
+                        kvkk: false // Checkbox verisini ekledik
                     }
                 }
             },
@@ -172,6 +185,8 @@
                         alert("Vue Hatası: Geçersiz E-posta!");
                     } else if (isNaN(this.formData.phone) || this.formData.phone.length < 10) {
                         alert("Vue Hatası: Telefon numarası sayısal ve geçerli olmalıdır!");
+                    } else if (!this.formData.kvkk) {
+                        alert("Vue Hatası: KVKK onay kutusunu işaretlemelisiniz!");
                     } else {
                         alert("Vue.js Denetimi Başarılı! Form hazır.");
                         document.getElementById('submitBtn').disabled = false;
